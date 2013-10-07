@@ -1,8 +1,7 @@
 ;(function(){
-	var fib = [];
 	function doWork(){
  		
- 		loadFib();
+ 		var fib = loadFib();
 
 		var sum = 0;
 		var work = '';
@@ -24,6 +23,7 @@
 
 	function loadFib(){
 		var run = true;
+		var fib = [];
 		fib.push(0);
 		fib.push(1);
 		do{
@@ -35,7 +35,9 @@
 			}
 		}
 		while(run);
+
+		return fib;
 	}
-	
+
 	doWork();	
 })();
