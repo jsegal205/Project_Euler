@@ -2,34 +2,26 @@
 	var fib = [];
 	function doWork(){
 		var run = true;
+		fib.push(0);
+		fib.push(1);
 		do{
-			var fibNum = (fib.length == 0) ? 1 : fib[fib.length - 1];
-			getNextFib(fibNum);
-			/*if (fib.length == 0){
-				getNextFib(1);
-			}
-			else {
-				getNextFib(fib[fib.length - 1]);
-			}*/
-			if (fib.length == 3){
+			var fibNum = fib[fib.length - 1];
+			fib.push(fibNum + fib[fib.length-2]);
+
+			if (fib[fib.length - 1] > 4000000){
 				run = false;
 			}
+			console.log(fib[fib.length -1]);
 		}
-		while(run)
-		
+		while(run);
 
-	}
+		for(var i = 0; i<fib.length; i++){
 
-	function getNextFib(num){
-		fib.push(num);
-		//if (num == 1){
-		//	return 1;
-		//}
+			if ((fib[i] % 2 == 0) && (fib[i]<4000000)){
+				console.log(fib[i]);
+			}
+		}
 
-		//calc next fib, 
-		//push to array
-		//return last item in array 
-		//return num;
 	}
 
 	doWork();	
