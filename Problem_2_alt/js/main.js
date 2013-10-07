@@ -1,18 +1,8 @@
 ;(function(){
 	var fib = [];
 	function doWork(){
-		var run = true;
-		fib.push(0);
-		fib.push(1);
-		do{
-			var fibNum = fib[fib.length - 1];
-			fib.push(fibNum + fib[fib.length-2]);
-
-			if (fib[fib.length - 1] > 4000000){
-				run = false;
-			}
-		}
-		while(run);
+ 		
+ 		loadFib();
 
 		var sum = 0;
 		var work = '';
@@ -32,5 +22,20 @@
 		document.getElementById('Answer').innerHTML = sum;
 	}
 
+	function loadFib(){
+		var run = true;
+		fib.push(0);
+		fib.push(1);
+		do{
+			var fibNum = fib[fib.length - 1];
+			fib.push(fibNum + fib[fib.length-2]);
+
+			if (fib[fib.length - 1] > 4000000){
+				run = false;
+			}
+		}
+		while(run);
+	}
+	
 	doWork();	
 })();
